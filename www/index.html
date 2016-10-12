@@ -46,8 +46,8 @@
       <ion-content>
           <ion-list>
             
-              <ion-item class="item" ng-repeat="data in datas">
-                  <img ng-src="{{contact.face}}" width="240" height="240" ng-click="triggerCall()"></br>Call {{contact.phoneNumber}} Laban
+              <ion-item class="item" ng-repeat="contact in contacts">
+                  <img ng-src="{{contacts.face}}" width="240" height="240" ng-click="triggerCall()"></br>Call {{contacts.phoneNumber}}
               </ion-item>
           </ion-list>
 
