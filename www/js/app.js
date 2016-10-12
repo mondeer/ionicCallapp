@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('muscularDistrophy', ['ionic'])
+angular.module('muscularDistrophy', ['ionic', 'muscularDistrophy.services'])
 
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
@@ -18,16 +18,9 @@ angular.module('muscularDistrophy', ['ionic'])
         });
     })
 
-    .controller("callController", function($scope) {
+    .controller("callController", function($scope, Contacts) {
 
-        $scope.data = {
-            phoneNumber : "+254724871111"
-        };
+        $scope.contacts = Contacts.all();
 
-        $scope.dialNumber = function(number) {
-            window.open('tel:' + number, '_system');
-        }
-        $scope.triggerCall = function(number){
-            window.plugins.CallNumber.callNumber(function(){}, function(e){}, '0724871111');
-        }
-    })
+        $scope.triggerCall = Contacts.triggerCall();
+    });
