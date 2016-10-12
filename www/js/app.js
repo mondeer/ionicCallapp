@@ -22,7 +22,7 @@ angular.module('muscularDistrophy', ['ionic'])
 
         $scope.contacts = {
             phoneNumber: '+254724871111',
-            face: 'img/kan.jpg'
+            face: 'img/kan.jpeg'
         },{phoneNumber: '+16124021748', face: 'img/kan.jpeg'};
         // console.log($scope.contacts);
         $scope.triggerCall = function(){
