@@ -20,14 +20,19 @@ angular.module('muscularDistrophy', ['ionic'])
 
     .controller("callController", function($scope) {
 
-        $scope.contacts = {
+        $scope.contacts = [{
             phoneNumber: '+254724871111',
-            face: 'img/kan.jpeg'
-        },{phoneNumber: '+16124021748', face: 'img/kan.jpeg'};
+            face: 'img/my.jpg'
+        },{phoneNumber: '+16124021748', face: 'img/kan.jpeg'}];
         // console.log($scope.contacts);
         $scope.triggerCall = function(){
             
-            window.plugins.CallNumber.callNumber(function onSuccess(){}, function(e){}, $scope.contacts.phoneNumber);
+            window.plugins.CallNumber.callNumber(function onSuccess(){}, function(e){}, $scope.contacts[0].phoneNumber);
+            
+        }
+        $scope.triggerCall1 = function(){
+            
+            window.plugins.CallNumber.callNumber(function onSuccess(){}, function(e){}, $scope.contacts[1].phoneNumber);
             
         }
     });
