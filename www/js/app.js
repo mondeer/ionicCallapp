@@ -27,12 +27,12 @@ angular.module('muscularDistrophy', ['ionic'])
         // console.log($scope.contacts);
         $scope.triggerCall = function(){
             
-            window.plugins.CallNumber.callNumber(function onSuccess(){}, function(e){}, $scope.contacts[0].phoneNumber);
+            window.plugins.CallNumber.callNumber(function onSuccess(){ alert("Phone is initiated");}, function(e){}, $scope.contacts[0].phoneNumber);
             
         }
         $scope.triggerCall1 = function(){
             
-            window.plugins.CallNumber.callNumber(function onSuccess(){}, function(e){}, $scope.contacts[1].phoneNumber);
+            window.plugins.CallNumber.callNumber(function onSuccess(){ alert("Phone is initiated");}, function(e){}, $scope.contacts[1].phoneNumber);
             
         }
     });
